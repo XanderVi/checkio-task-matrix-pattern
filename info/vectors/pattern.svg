@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="720" height="540" viewBox="0, 0, 720, 540">
+  <g id="Background">
+    <rect x="0" y="0" width="720" height="540" fill="#000000" fill-opacity="0"/>
+  </g>
+  <g id="Layer 1">
+    <text transform="matrix(1, 0, 0, 1, 245.34, 37.5)">
+      <tspan x="-75.34" y="13.5" font-family="Verdana-Bold" font-size="36" fill="#294270">Pattern</tspan>
+    </text>
+    <text transform="matrix(1, 0, 0, 1, 245.34, 104.5)">
+      <tspan x="-31.746" y="-8.5" font-family="Verdana-Bold" font-size="36" fill="#294270">1 0</tspan>
+      <tspan x="-31.746" y="35.5" font-family="Verdana-Bold" font-size="36" fill="#294270">1 0</tspan>
+    </text>
+    <text transform="matrix(1, 0, 0, 1, 478.594, 170.5)">
+      <tspan x="-88.594" y="-74.5" font-family="Verdana-Bold" font-size="36" fill="#294270">0 1 0 1 0</tspan>
+      <tspan x="-88.594" y="-30.5" font-family="Verdana-Bold" font-size="36" fill="#294270">0 1 1 0 0</tspan>
+      <tspan x="-88.594" y="13.5" font-family="Verdana-Bold" font-size="36" fill="#294270">1 0 1 1 0</tspan>
+      <tspan x="-88.594" y="57.5" font-family="Verdana-Bold" font-size="36" fill="#294270">1 1 0 1 1</tspan>
+      <tspan x="-88.594" y="101.5" font-family="Verdana-Bold" font-size="36" fill="#294270">0 1 1 0 0</tspan>
+    </text>
+    <text transform="matrix(1, 0, 0, 1, 478.594, 37.5)">
+      <tspan x="-65.435" y="13.5" font-family="Verdana-Bold" font-size="36" fill="#294270">Image</tspan>
+    </text>
+    <text transform="matrix(1, 0, 0, 1, 118.594, 410.5)">
+      <tspan x="-88.594" y="-74.5" font-family="Verdana-Bold" font-size="36" fill="#294270">0 </tspan>
+      <tspan x="-50.695" y="-74.5" font-family="Verdana-Bold" font-size="36" fill="#F0801A">3 2</tspan>
+      <tspan x="12.797" y="-74.5" font-family="Verdana-Bold" font-size="36" fill="#294270"> 1 0</tspan>
+      <tspan x="-88.594" y="-30.5" font-family="Verdana-Bold" font-size="36" fill="#294270">0 </tspan>
+      <tspan x="-50.695" y="-30.5" font-family="Verdana-Bold" font-size="36" fill="#F0801A">3 3</tspan>
+      <tspan x="12.797" y="-30.5" font-family="Verdana-Bold" font-size="36" fill="#294270"> 0 0</tspan>
+      <tspan x="-88.594" y="13.5" font-family="Verdana-Bold" font-size="36" fill="#294270">1 0 1 1 0</tspan>
+      <tspan x="-88.594" y="57.5" font-family="Verdana-Bold" font-size="36" fill="#294270">1 1 0 1 1</tspan>
+      <tspan x="-88.594" y="101.5" font-family="Verdana-Bold" font-size="36" fill="#294270">0 1 1 0 0</tspan>
+    </text>
+    <text transform="matrix(1, 0, 0, 1, 358.594, 410.5)">
+      <tspan x="-88.594" y="-74.5" font-family="Verdana-Bold" font-size="36" fill="#294270">0 </tspan>
+      <tspan x="-50.695" y="-74.5" font-family="Verdana-Bold" font-size="36" fill="#F0801A">3 2</tspan>
+      <tspan x="12.797" y="-74.5" font-family="Verdana-Bold" font-size="36" fill="#294270"> 1 0</tspan>
+      <tspan x="-88.594" y="-30.5" font-family="Verdana-Bold" font-size="36" fill="#294270">0 </tspan>
+      <tspan x="-50.695" y="-30.5" font-family="Verdana-Bold" font-size="36" fill="#F0801A">3 3</tspan>
+      <tspan x="12.797" y="-30.5" font-family="Verdana-Bold" font-size="36" fill="#294270"> 0 0</tspan>
+      <tspan x="-88.594" y="13.5" font-family="Verdana-Bold" font-size="36" fill="#F0801A">3 2</tspan>
+      <tspan x="-25.102" y="13.5" font-family="Verdana-Bold" font-size="36" fill="#294270"> 1 1 0</tspan>
+      <tspan x="-88.594" y="57.5" font-family="Verdana-Bold" font-size="36" fill="#F0801A">3 3</tspan>
+      <tspan x="-25.102" y="57.5" font-family="Verdana-Bold" font-size="36" fill="#294270"> 0 1 1</tspan>
+      <tspan x="-88.594" y="101.5" font-family="Verdana-Bold" font-size="36" fill="#294270">0 1 1 0 0</tspan>
+    </text>
+    <text transform="matrix(1, 0, 0, 1, 600, 410.5)">
+      <tspan x="-88.594" y="-74.5" font-family="Verdana-Bold" font-size="36" fill="#294270">0 </tspan>
+      <tspan x="-50.695" y="-74.5" font-family="Verdana-Bold" font-size="36" fill="#F0801A">3 2</tspan>
+      <tspan x="12.797" y="-74.5" font-family="Verdana-Bold" font-size="36" fill="#294270"> 1 0</tspan>
+      <tspan x="-88.594" y="-30.5" font-family="Verdana-Bold" font-size="36" fill="#294270">0 </tspan>
+      <tspan x="-50.695" y="-30.5" font-family="Verdana-Bold" font-size="36" fill="#F0801A">3 3</tspan>
+      <tspan x="12.797" y="-30.5" font-family="Verdana-Bold" font-size="36" fill="#294270"> 0 0</tspan>
+      <tspan x="-88.594" y="13.5" font-family="Verdana-Bold" font-size="36" fill="#F0801A">3 2</tspan>
+      <tspan x="-25.102" y="13.5" font-family="Verdana-Bold" font-size="36" fill="#294270"> 1 </tspan>
+      <tspan x="25.102" y="13.5" font-family="Verdana-Bold" font-size="36" fill="#F0801A">3 2</tspan>
+      <tspan x="-88.594" y="57.5" font-family="Verdana-Bold" font-size="36" fill="#F0801A">3 3</tspan>
+      <tspan x="-25.102" y="57.5" font-family="Verdana-Bold" font-size="36" fill="#294270"> 0 </tspan>
+      <tspan x="25.102" y="57.5" font-family="Verdana-Bold" font-size="36" fill="#F0801A">3 3</tspan>
+      <tspan x="-88.594" y="101.5" font-family="Verdana-Bold" font-size="36" fill="#294270">0 1 1 0 0</tspan>
+    </text>
+  </g>
+  <defs/>
+</svg>
