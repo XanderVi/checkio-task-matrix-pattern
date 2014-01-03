@@ -1,9 +1,18 @@
 <p>
-    <i>( Describe task in general )</i>
+    For the exploring Sophia use drones. But she tired to look at the monitors all the time.
+    Sophia wants to learn the drones recognize some basis patterns and mark it.
+</p>
+<p>
+    The drones have a simple optical monochrome system. So the image can be represented as a binary matrix.
+    You should to write a program to search a binary matrix (a pattern) in a other binary matrix (an image).
+    The recognition process consists in scanning row by row (horizontal scanning) the image matrix,
+    when a pattern is located on the image you must mark this pattern.
+    To mark a located pattern change 1 to 3 and 0 to 2.
+    The result will be the image matrix with the located patterns marked.
 </p>
 
 <p>
-    Sum two passed ints
+    The patterns in the image matrix are not crossed, because you should mark the pattern right away when it is located.
 </p>
 
 <p style="text-align: center;">
@@ -11,19 +20,16 @@
     <img class="for_editor_only" title="example" src="{{MEDIA}}example.png" alt="example" width="380px"/>
 </p>
 
-<p><i>( Explain input and output values )</i></p>
 <p>
-    <strong>Input: </strong> Two arguments. Both are int
+    <strong>Input: </strong> Two arguments. A pattern as a binary matrix, a list of lists. A image as a binary matrix, a list of lists.
 </p>
 
 <p>
-    <strong>Output: </strong> Int. 
+    <strong>Output: </strong> The marked image as a matrix, a list of list.
 </p>
-
 
 
 <div class="for_info_only">
-    <p><i>( Put some usage examples )</i></p>
     <p>
         <strong>Example:</strong>
     </p>
@@ -35,5 +41,5 @@ checkio(5, 7) == 12
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
-    <i>(Here you can explain how it can be used in development and what is usage of this.)</i>
+
 </p>
