@@ -77,7 +77,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             }
             //Dont change the code before it
 
-            var canvas = new MatrixPattern($content.find(".explanation")[0]);
+            var canvas = new MatrixPatternCanvas($content.find(".explanation")[0]);
 
             canvas.prepare(checkioInput[0], checkioInput[1]);
 
@@ -164,7 +164,8 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                             ).attr(pattern[i][j] === 1 ? attrRect1 : attrRect0),
                             paper.text(
                                 px0 + (j + 0.5) * cellSize,
-                                (i + 0.5) * cellSize
+                                (i + 0.5) * cellSize,
+                                pattern[i][j]
                             ).attr(attrNumb)
                         );
                     }
@@ -177,10 +178,11 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                                 j * cellSize,
                                 my0 + i * cellSize,
                                 cellSize, cellSize
-                            ).attr(pattern[i][j] === 1 ? attrRect1 : attrRect0),
+                            ).attr(matrix[i][j] === 1 ? attrRect1 : attrRect0),
                             paper.text(
                                 (j + 0.5) * cellSize,
-                                my0 + (i + 0.5) * cellSize
+                                my0 + (i + 0.5) * cellSize,
+                                matrix[i][j]
                             ).attr(attrNumb)
                         );
                         cellSet.push(cell);
