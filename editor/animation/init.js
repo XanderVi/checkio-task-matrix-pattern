@@ -122,7 +122,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
 
             var colorWhite = "#FFFFFF";
 
-            var maxSizeX = 380;
+            var maxSizeX = 360;
             var cellSize = 40;
             var sizeX,
                 sizeY;
@@ -141,11 +141,11 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             var attrRect0 = {"stroke": colorGrey4, "stroke-width": 2, "fill": colorBlue1};
             var attrRect1 = {"stroke": colorGrey4, "stroke-width": 2, "fill": colorBlue2};
             var attrRect2 = {"stroke": colorGrey4, "stroke-width": 2, "fill": colorOrange1};
-            var attrRect3 = {"stroke": colorGrey4, "stroke-width": 2, "fill": colorOrange2};
+            var attrRect3 = {"stroke": colorGrey4, "stroke-width": 2, "fill": colorOrange3};
             var attrNumb;
             var attrFrame = {"stroke": colorBlue4, "stroke-width": 4};
 
-            var moveTime = 500;
+            var moveTime = 300;
 
             this.prepare = function (pattern, matrix) {
                 pattern_lx = pattern[0].length;
@@ -235,19 +235,19 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                         function () {
                             col++;
                             if (marks.indexOf(row * matrix_lx + col - 1) !== -1) {
-                                frame.animate({"stroke": colorOrange4}, moveTime / 2, function () {
-                                    frame.animate({"stroke": colorBlue4}, moveTime / 2, move)
+                                frame.animate({"stroke": colorOrange4}, moveTime, function () {
+                                    frame.animate({"stroke": colorBlue4}, moveTime, move)
                                 });
                                 for (var i = 0; i < pattern_ly; i++) {
                                     for (var j = 0; j < pattern_lx; j++) {
                                         var cell = cellSet[row + i][col + j - 1];
                                         cell.number += 2;
                                         if (cell.number === 2) {
-                                            cell[0].animate(attrRect2, moveTime);
+                                            cell[0].animate(attrRect2, moveTime * 2);
                                             cell[1].attr("text", 2);
                                         }
                                         else {
-                                            cell[0].animate(attrRect3, moveTime);
+                                            cell[0].animate(attrRect3, moveTime * 2);
                                             cell[1].attr("text", 3);
                                         }
 
