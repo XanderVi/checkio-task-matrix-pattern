@@ -80,6 +80,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             var canvas = new MatrixPatternCanvas($content.find(".explanation")[0]);
 
             canvas.prepare(checkioInput[0], checkioInput[1]);
+            canvas.animate(explanation);
 
 
             this_e.setAnimationHeight($content.height() + 60);
@@ -103,6 +104,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
 //        });
 
         function MatrixPatternCanvas(root) {
+            var format = Raphael.format;
             var colorOrange4 = "#F0801A";
             var colorOrange3 = "#FA8F00";
             var colorOrange2 = "#FAA600";
@@ -124,36 +126,46 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             var cellSize = 40;
             var sizeX,
                 sizeY;
+            var px0,
+                my0;
+
+            var pattern_lx,
+                pattern_ly,
+                matrix_lx,
+                matrix_ly;
 
             var paper;
-            var cellSet;
+            var cellSet = [];
             var numbSet;
 
             var attrRect0 = {"stroke": colorGrey4, "stroke-width": 2, "fill": colorBlue1};
-            var attrRect1 = {"stroke": colorGrey4, "stroke-width": 2, "fill": colorBlue3};
+            var attrRect1 = {"stroke": colorGrey4, "stroke-width": 2, "fill": colorBlue2};
             var attrRect2 = {"stroke": colorGrey4, "stroke-width": 2, "fill": colorOrange1};
             var attrRect3 = {"stroke": colorGrey4, "stroke-width": 2, "fill": colorOrange2};
             var attrNumb;
+            var attrFrame = {"stroke": colorBlue4, "stroke-width": 4};
+
+            var moveTime = 500;
 
             this.prepare = function (pattern, matrix) {
-                var pattern_lx = pattern[0].length;
-                var pattern_ly = pattern.length;
-                var matrix_lx = matrix[0].length;
-                var matrix_ly = matrix.length;
+                pattern_lx = pattern[0].length;
+                pattern_ly = pattern.length;
+                matrix_lx = matrix[0].length;
+                matrix_ly = matrix.length;
 
                 cellSize = Math.min(cellSize, maxSizeX / matrix_lx);
                 sizeX = cellSize * matrix_lx;
                 sizeY = cellSize * (matrix_ly + pattern_ly + 1);
-                var px0 = (sizeX - cellSize * pattern_lx) / 2;
-                var my0 = cellSize * (pattern_ly + 1);
+                px0 = (sizeX - cellSize * pattern_lx) / 2;
+                my0 = cellSize * (pattern_ly + 1);
 
 
                 attrNumb = {"stroke": colorBlue4, "font-size": cellSize * 0.8, "font-family": "Verdana", "font-weight": "bold"};
                 paper = Raphael(root, sizeX, sizeY);
-                cellSet = paper.set();
                 numbSet = paper.set();
 
                 for (var i = 0; i < pattern_ly; i++) {
+
                     for (var j = 0; j < pattern_lx; j++) {
                         var cell = paper.set();
                         cell.push(
@@ -171,6 +183,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                     }
                 }
                 for (i = 0; i < matrix_ly; i++) {
+                    var rowSet = [];
                     for (j = 0; j < matrix_lx; j++) {
                         cell = paper.set();
                         cell.push(
@@ -185,11 +198,69 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                                 matrix[i][j]
                             ).attr(attrNumb)
                         );
-                        cellSet.push(cell);
+                        cell.number = matrix[i][j];
+                        rowSet.push(cell);
                     }
+                    cellSet.push(rowSet);
                 }
+            };
+
+            this.animate = function (marks) {
+                var row = 0,
+                    col = 0;
+
+                var lastRow = matrix_ly - pattern_ly;
+                var lastColumn = matrix_lx - pattern_lx + 1;
+
+                var frame = paper.rect(0, my0, cellSize * pattern_lx, cellSize * pattern_ly, cellSize / 20).attr(attrFrame);
+
+                (function move() {
+                    if (col >= lastColumn) {
+                        if (row >= lastRow) {
+                            return false;
+                        }
+                        else {
+                            col = 0;
+                            row++;
+                            return move();
+                        }
+                    }
+
+                    frame.animate({transform: format(
+                            "t{0},{1}",
+                            col * cellSize,
+                            row * cellSize
+                        )},
+                        moveTime,
+                        function () {
+                            col++;
+                            if (marks.indexOf(row * matrix_lx + col - 1) !== -1) {
+                                frame.animate({"stroke": colorOrange4}, moveTime / 2, function () {
+                                    frame.animate({"stroke": colorBlue4}, moveTime / 2, move)
+                                });
+                                for (var i = 0; i < pattern_ly; i++) {
+                                    for (var j = 0; j < pattern_lx; j++) {
+                                        var cell = cellSet[row + i][col + j - 1];
+                                        cell.number += 2;
+                                        if (cell.number === 2) {
+                                            cell[0].animate(attrRect2, moveTime);
+                                            cell[1].attr("text", 2);
+                                        }
+                                        else {
+                                            cell[0].animate(attrRect3, moveTime);
+                                            cell[1].attr("text", 3);
+                                        }
+
+                                    }
+                                }
+                            }
+                            else {
+                                move();
+                            }
+                        });
 
 
+                }())
             }
         }
 
