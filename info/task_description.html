@@ -21,11 +21,11 @@
 </p>
 
 <p>
-    <strong>Input: </strong> Two arguments. A pattern as a binary matrix, a list of lists. An image as a binary matrix, a list of lists.
+    <strong>Input: </strong> Two arguments. A pattern as a list of lists and an image as a list of lists.
 </p>
 
 <p>
-    <strong>Output: </strong> The marked image as a matrix, a list of list.
+    <strong>Output: </strong> The marked image as a matrix as a list of list.
 </p>
 
 
@@ -56,4 +56,17 @@ checkio([[1, 1], [1, 1]],
 <p class="for_info_only">
     <strong>How it is used: </strong>
     As we can see in the first chapter, this task is a simple monochrome pattern recognition.
+    You can take a monochrome image and find various subimages inside.
+    For example: alien spaceships in the Galaxy Game ;-)
+</p>
+
+
+<p>
+    <strong>Precondition:</strong>
+    1 < image_width &le; 10<br>
+    1 < image_height &le; 10<br>
+    1 < pattern_height &le; 10<br>
+    1 < pattern_height &le; 10<br>
+    |pattern| < |image|<br>
+    &forall; x ∈ data : x == 0 or x == 1<br>
 </p>
