@@ -131,6 +131,8 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             var px0,
                 my0;
 
+            var pad = 10;
+
             var pattern_lx,
                 pattern_ly,
                 matrix_lx,
@@ -156,8 +158,8 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                 matrix_ly = matrix.length;
 
                 cellSize = Math.min(cellSize, maxSizeX / matrix_lx);
-                sizeX = cellSize * matrix_lx;
-                sizeY = cellSize * (matrix_ly + pattern_ly + 1);
+                sizeX = cellSize * matrix_lx + 2 * pad;
+                sizeY = cellSize * (matrix_ly + pattern_ly + 1) + 2 * pad;
                 px0 = (sizeX - cellSize * pattern_lx) / 2;
                 my0 = cellSize * (pattern_ly + 1);
 
@@ -172,13 +174,13 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                         var cell = paper.set();
                         cell.push(
                             paper.rect(
-                                px0 + j * cellSize,
-                                i * cellSize,
+                                px0 + j * cellSize + pad,
+                                i * cellSize + pad,
                                 cellSize, cellSize
                             ).attr(pattern[i][j] === 1 ? attrRect1 : attrRect0),
                             paper.text(
-                                px0 + (j + 0.5) * cellSize,
-                                (i + 0.5) * cellSize,
+                                px0 + (j + 0.5) * cellSize + pad,
+                                (i + 0.5) * cellSize + pad,
                                 pattern[i][j]
                             ).attr(attrNumb)
                         );
@@ -190,13 +192,13 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                         cell = paper.set();
                         cell.push(
                             paper.rect(
-                                j * cellSize,
-                                my0 + i * cellSize,
+                                j * cellSize + pad,
+                                my0 + i * cellSize + pad,
                                 cellSize, cellSize
                             ).attr(matrix[i][j] === 1 ? attrRect1 : attrRect0),
                             paper.text(
-                                (j + 0.5) * cellSize,
-                                my0 + (i + 0.5) * cellSize,
+                                (j + 0.5) * cellSize + pad,
+                                my0 + (i + 0.5) * cellSize + pad,
                                 matrix[i][j]
                             ).attr(attrNumb)
                         );
@@ -214,7 +216,8 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                 var lastRow = matrix_ly - pattern_ly;
                 var lastColumn = matrix_lx - pattern_lx + 1;
 
-                var frame = paper.rect(0, my0, cellSize * pattern_lx, cellSize * pattern_ly, cellSize / 20).attr(attrFrame);
+                var frame = paper.rect(pad, pad + my0,
+                    cellSize * pattern_lx, cellSize * pattern_ly, cellSize / 20).attr(attrFrame);
 
                 (function move() {
                     if (col >= lastColumn) {

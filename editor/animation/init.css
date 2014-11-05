@@ -34,7 +34,7 @@
 .animation-content{
     background-color: #dfe8f7;
     color: #696969;
-    font-family: verdana;
+    font-family: Verdana, Arial, sans-serif;
     font-size: 15px;
     width: 100%;
 }
@@ -58,13 +58,13 @@
     border-color: #de0202;
 }
 
-.animation-content .explanation svg {
-    padding: 10px;
-}
+/*.animation-content .explanation svg {*/
+    /*padding: 10px;*/
+/*}*/
 
 .tryit-content {
     background-color: #dfe8f7;
-    font-family: verdana;
+    font-family: Verdana, Arial, serif;
 }
 
 .tryit-content .tool td{
